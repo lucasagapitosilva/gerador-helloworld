@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
 
 function App() {
+
+  const [novoTexto, setNovoTexto] = useState()
+
+  function alterarTexto() {
+    setNovoTexto('Hello, World!')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className='container'>
+      <div className="App">
+        <div className='area-texto'>
+          <h2>{novoTexto}</h2>
+        </div>
+
+        <div className='botao'>
+          <label>Click no botão abaixo para aparecer um texto:</label>
+
+          <button onClick={alterarTexto}>
+            Gerar texto
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
